@@ -1,6 +1,16 @@
+//ENV variables
+require('dotenv').config();
+
+//Require
 const express = require('express')
 const app = express()
-const PORT = 3000
+
+//Express
+const db = require('./database')
+const PORT = process.env.PORT
+
+//Database
+db()
 
 app.listen(PORT, () => {
   console.log(`Ready!!, listening on port ${PORT}`);
